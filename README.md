@@ -3,8 +3,8 @@
 > ## OOP: 
 ```
 Piller of OOP:
-    1.Encapsulation = Data Hiding + Abstruction. 
-    2.Inheritance.
-    3.Polymorphism.
+    1.Encapsulation = Data Hiding + Abstruction.  : Ensures security.
+    2.Inheritance : Reusability.
+    3.Polymorphism : Flexibility
 ```
 
