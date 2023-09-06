@@ -1,6 +1,6 @@
 > # JAVA + DSA
 
-> ## Language Fundamentals
+> # Session 01 - 06 Language Fundamentals
 
     1.Identifiers
     2.Literals/Constants
@@ -77,12 +77,19 @@ class Identifiers
 #### More Examples:
 
 int stdNo=111; ========= valid
+
 int std+No=111;=========Invalid
+
 String std\*Name="Ashwani";===== Invalid
+
 String #stdAddr="Delhi";====Invalid
+
 String std@id="123";===Invalid
+
 float std.Fee=50000.0f;=====Invalid
+
 String std-Addr="Hyd";======Invalid
+
 String std_Addr="Hyd";======Valid
 
 > ### Note 2: Identifiers should not be duplicated with in the same scope, identifiers may be duplicated in two different scopes.
@@ -311,7 +318,6 @@ String name = null;
 > Operator is a symbol;
 > it will perform a particular operation over the
 > provided operands
->
 
 ```java
 class Operators
@@ -324,7 +330,7 @@ class Operators
         int min = a - b;
         int div = a/b;
         int mod = a%b;
-        //String er sathe sudhu ans append hosse karon string er por + jog noi append hisebe kaj kore : 
+        //String er sathe sudhu ans append hosse karon string er por + jog noi append hisebe kaj kore :
         System.out.println("a+b : "+ sum);
         System.out.println("a-b : "+ min);
         System.out.println("a/b : "+ div);
@@ -337,13 +343,15 @@ class Operators
     }
 }
 ```
-## Increment & Decrement Operator : 
+
+## Increment & Decrement Operator :
+
 ```java
 class IncDec
 {
     public static void main(String[] args)
     {
-        //Increment : 
+        //Increment :
         int a = 10;
         System.out.println(a);//10
         System.out.println(a++);//Post-increment//10
@@ -354,14 +362,15 @@ class IncDec
         int b = 5;
         System.out.println((++b-++b));//-1(Age operand ready hobe then operator er kaj hobe...)
 
-        //BODMAS applied : 
+        //BODMAS applied :
         int c = 5;
         System.out.println((--c+--c)*(++c-c--)+(c+++--c)*(++c+c--));
     }
 }
 ```
 
-## Assignment Operatar : 
+## Assignment Operatar :
+
 ```java
 class assignment
 {
@@ -395,7 +404,8 @@ class assignment
 }
 ```
 
-## Comparision Operators : 
+## Comparision Operators :
+
 ```java
 class Comp {
     public static void main(String[] args) {
@@ -429,7 +439,7 @@ class Comp {
 }
 ```
 
-## Logical Operator : 
+## Logical Operator :
 
 ```java
 class Booleanlogical
@@ -460,10 +470,12 @@ class Booleanlogical
         System.out.println(s2^s2);
         System.out.println(s2^s1);
     }
-        
+
 }
 ```
-## Bitwise Logical Operators : 
+
+## Bitwise Logical Operators :
+
 ```java
 class bitwise_operator {
     public static void main(String[] args) {
@@ -492,9 +504,224 @@ class bitwise_operator {
         System.out.println(b);
     }
 }
+```
+
+## Short Circuit Operators : Efficient than bitwise:
+
+```java
+class short_circuit_operators {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 10;
+        //Ekhane 2 tai compare hobe ...1st ta flase holeo ...2nd tao dekhbe
+        if(a<6 & b>1)
+        {
+            System.out.println("True");
+        }
+        //Ekhane 1st ta false dekhlei ar porer ta dekhbe nah
+        if(a<6 && b>1)
+        {
+            System.out.println("True");
+        }
+//Bitwise or:
+        int m = 30, n = 20;
+        if(++m>30|++n>20)
+        {
+            m++;
+        }
+        else
+        {
+            n++;
+        }
+        System.out.println(m+"  "+n);// 32 21
+
+//Shortcircuit or:
+        int p = 30, q = 20;
+        if(++p>30||++q>20)
+        {
+            p++;
+        }
+        else
+        {
+            q++;
+        }
+        System.out.println(p+"  "+q);// 32 20
+
+        int x = 30, y = 20;
+//first e if e dhuke ++x er jonne 31 then eta 30 er theke choto nah tai && er jonne ++y>20 check e hobe nah direct else e jabe o y++ kore 21 korbe...
+        if(++x<30 && ++y>20)
+        {
+            x++;
+        }
+        else
+        {
+            y++;
+        }
+        System.out.println(x+ " " +y);//31 21
+
+//But in this case :hudai check kore & porer ta tai eta time consuming...
+        if(++x<30 & ++y>20)
+        {
+            x++;
+        }
+        else
+        {
+            y++;
+        }
+        System.out.println(x+ " " +y);//32 23
+    }
+}
 
 ```
 
+## Ternary Operator :
+
+```java
+condition? expression1:expression2;
+```
+
+    true hole expression1
+    false hole expression2
+
+```java
+class ternary {
+    public static void main(String[] args) {
+    
+        System.out.println("------------------");
+        int x = 10;
+        int y = 2;
+        int max = (x>y)? x:y;
+        System.out.println(max);
+
+        System.out.println("------------------");
+        int m = 10,n = 5;
+        String s = (m>n) ? "hello" : "Java";
+        System.out.println(s);
+
+        System.out.println("------------------");
+        int a = 5, b = 10, c = 15;
+        int res = (a>b) ?(c>b)? c:b:(c>a)?c:a;
+        System.out.println(res);
+
+        System.out.println("------------------");
+        int p = 7, q = 3, r = 5;
+        int result = p < q? p > r? p : r : q;// p > q false tai p > r execute e hobe nah ans hobe q = 3; orthat p > q er jonne if holo(p > r? p : r) ar else holo (q) tai jehutu false tai q hobe...
+        System.out.println(result);
+
+        System.out.println("------------------");
+        int f = 35, g = 6, h = 34;
+        int rr = (f > g) ? (h > b)?h:g:(h>f)?h:f;
+        System.out.println(rr);
+        // ekahne (f > g) er jonne
+                           // if holo (h > b)?h:g
+                           //else holo (h>f)?h:f
+
+
+    }
+}
+```
+
+### Some Practice : 
+```java
+class Practice
+{
+    public static void main(String[] args)
+    {
+        int a = 6;
+        int b = ++a * 2 + a++  + --a - a--;
+        // 7 * 2 = 14 + 7 = 21(a = 8) + 7 = 28 - 7 = 21...
+        System.out.println(b);
+        
+        int x = 6;
+        int y = x-- + --x + x++ - ++x;
+        //6 + 4 + 4 - 6 = 8
+        System.out.println(y);
+
+        int q = 3;
+        int q1 = q-- + q++ - --q * ++q + q--;
+        //3 + 2 - 2 * 3 + 3 = 2
+        // age jog biyog gun vag na kore only post ar pre calc kore then precedency onujai agaite hobe
+        System.out.println(q1);
+
+        int l = 10;
+        int l1 = l-- * --l * l++ - l-- * l++;
+        //10 * 8 * 8 - 9 * 8 = 640 - 72 = 568
+        System.out.println(l1);
+
+        int g = 4;
+        int g1 = g-- / ++g * --g + g++ * g-- - --g / g++;
+        //4 / 4 * 3 + 3 * 4 - 2 / 2 = 3 + 12 - 1 = 14
+        System.out.println(g1);
+
+    }
+}
+```
+
+># Session  07 Data Type : 
+
+    (i)Numeric Data Types
+        (i)Integral Data Types                      (ii)Floating Pont Data Types 
+            (i)Byte(ii)Short(iii)int(iv)long            (i)double(ii)float
+    (ii)Char
+    (iii)Boolean
+
+>### Note: Except Boolean and char all remaining data types are considered as signed data types because we can represent both "+ve" and"-ve" numbers.
+
+
+### Primitive Data Type : 
+    Integral data types:
+        byte: 8-bit 1 Byte Range: -128 to 127.
+        short: 16-bit 2 Byte Range: -32,768 to 32,767.
+        int: 32-bit 4 Byte Range: -2^31 to 2^31 - 1.
+        long: 64-bit 8 Byte Range: -2^63 to 2^63 - 1.
+
+    First bit represents the sign...If 0 then positive and 1 then negative...
+
+#### Why -128 to 127 for byte if it takes 8 bit?
+
+    A byte in Java is an 8-bit data type. This means it uses 8 binary digits (bits) to
+    represent values. In binary, each bit can have a value of either 0 or 1. Using 8 bits,
+    we have a total of 2^8 = 256 possible combinations.
+
+    +ve er jonne 0  1   1   1   1   1   1   1 = 0*2^7 + 1*2^6 + 1*2^5 + 1*2^4 + 1*2^3 + 1*2^2 + 1*2^1 + 1*2^0 = 127
+
+    -ve er jonne jodi 2's complement chinta kori then 1 0   0   0   0   0   0   1   = 2^7 + 2^0 = 129 - 1  = 128 cause 1st bit represents sign...
+
+    jodi 1's complement chinta kori then 1  0   0   0   0   0   0   0   = 2^7 = 128... 
+
+### Two's Complement Representation:
+    In computers, negative integers are often represented using a scheme called two's complement. In this scheme,
+<mark>the leftmost bit (the most significant bit) represents the sign of the number. If it's 0, the number is positive; if it's 1, the number is negative.</mark>
+
+<mark>The remaining bits represent the magnitude of the number's absolute value in binary form.</mark>
+
+    For byte, since we have 8 bits, one bit is used for the sign, leaving 7 bits for the magnitude.
+
+### <mark>Positive Numbers:</mark>
+
+    For positive numbers, the sign bit is 0, indicating positivity.
+
+    With 7 bits, you can represent values from 0000000 (binary for 0) to 1111111 (binary
+    for 127). This covers a range of 0 to 127.
+
+    Negative Numbers:
+    For negative numbers, the sign bit is 1, indicating negativity.
+
+    To represent negative numbers using two's complement, you invert the bits of the positive counter part (flipping 0s to 1s and 1s to 0s) and add 1 to the result.
+    In the case of byte, the two's complement of 0000000 (binary for 0) is 10000000,
+    which represents -128.
+    Putting it all together:
+    Positive values use 7 bits to represent the range from 0 to 127.
+    Negative values use 7 bits to represent the range from -1 to -128.
+
+>### Note : byte data type is best suitable if we are handling data in terms of streams either from the file or from the network.
+
+    Example:
+    byte b=10;
+    byte b2=130;//C.E:possible loss of precision
+    byte b=10.5;//C.E:possible loss of precision
+    byte b=true;//C.E:incompatible types
+    byte b="ashwani";//C.E:incompatible types
 
 > ## OOP:
 
