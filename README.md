@@ -586,7 +586,7 @@ condition? expression1:expression2;
 ```java
 class ternary {
     public static void main(String[] args) {
-    
+
         System.out.println("------------------");
         int x = 10;
         int y = 2;
@@ -621,7 +621,8 @@ class ternary {
 }
 ```
 
-### Some Practice : 
+### Some Practice :
+
 ```java
 class Practice
 {
@@ -631,7 +632,7 @@ class Practice
         int b = ++a * 2 + a++  + --a - a--;
         // 7 * 2 = 14 + 7 = 21(a = 8) + 7 = 28 - 7 = 21...
         System.out.println(b);
-        
+
         int x = 6;
         int y = x-- + --x + x++ - ++x;
         //6 + 4 + 4 - 6 = 8
@@ -657,18 +658,18 @@ class Practice
 }
 ```
 
-># Session  07 Data Type : 
+> # Session 07 Data Type :
 
     (i)Numeric Data Types
-        (i)Integral Data Types                      (ii)Floating Pont Data Types 
+        (i)Integral Data Types                      (ii)Floating Pont Data Types
             (i)Byte(ii)Short(iii)int(iv)long            (i)double(ii)float
     (ii)Char
     (iii)Boolean
 
->### Note: Except Boolean and char all remaining data types are considered as signed data types because we can represent both "+ve" and"-ve" numbers.
+> ### Note: Except Boolean and char all remaining data types are considered as signed data types because we can represent both "+ve" and"-ve" numbers.
 
+### Primitive Data Type :
 
-### Primitive Data Type : 
     Integral data types:
         byte: 8-bit 1 Byte Range: -128 to 127.
         short: 16-bit 2 Byte Range: -32,768 to 32,767.
@@ -676,6 +677,8 @@ class Practice
         long: 64-bit 8 Byte Range: -2^63 to 2^63 - 1.
 
     First bit represents the sign...If 0 then positive and 1 then negative...
+
+## Byte :
 
 #### Why -128 to 127 for byte if it takes 8 bit?
 
@@ -687,10 +690,12 @@ class Practice
 
     -ve er jonne jodi 2's complement chinta kori then 1 0   0   0   0   0   0   1   = 2^7 + 2^0 = 129 - 1  = 128 cause 1st bit represents sign...
 
-    jodi 1's complement chinta kori then 1  0   0   0   0   0   0   0   = 2^7 = 128... 
+    jodi 1's complement chinta kori then 1  0   0   0   0   0   0   0   = 2^7 = 128...
 
 ### Two's Complement Representation:
+
     In computers, negative integers are often represented using a scheme called two's complement. In this scheme,
+
 <mark>the leftmost bit (the most significant bit) represents the sign of the number. If it's 0, the number is positive; if it's 1, the number is negative.</mark>
 
 <mark>The remaining bits represent the magnitude of the number's absolute value in binary form.</mark>
@@ -714,14 +719,187 @@ class Practice
     Positive values use 7 bits to represent the range from 0 to 127.
     Negative values use 7 bits to represent the range from -1 to -128.
 
->### Note : byte data type is best suitable if we are handling data in terms of streams either from the file or from the network.
+> ### Note : byte data type is best suitable if we are handling data in terms of streams either from the file or from the network.
 
     Example:
+
+```java
     byte b=10;
     byte b2=130;//C.E:possible loss of precision
     byte b=10.5;//C.E:possible loss of precision
     byte b=true;//C.E:incompatible types
     byte b="ashwani";//C.E:incompatible types
+```
+
+```java
+class ByteProg
+{
+    public static void main(String[] args)
+    {
+        byte b = 10;
+        //byte b2 = 130;
+        byte b3 = 127;
+        byte b4 = -128;
+        //byte b5 = true;
+        //byte b6 = "Hridoy";
+        System.out.println(b);
+        //System.out.println(b2);
+        System.out.println(b3);
+        System.out.println(b4);
+
+    }
+}
+```
+
+## Short :
+
+<mark>The most rarely used data type in java is short.</mark>
+
+    Size: 2 bytes
+    Range: -32768 to 32767(-215 to 215-1)
+    Example:
+
+```java
+    short s=130;
+    short s1=32788;//C.E:possible loss of precision
+    short s2=true;//C.E:incompatible types
+```
+
+## Int :
+
+<mmark>This is most commonly used data type in java.</mmark>
+
+    Size: 4 bytes
+    Example:
+
+```java
+    int i=123;
+    int j=9.6;//C.E:possible loss of precision
+    int k=true;//C.E:incompatible types
+    int l=false;//C.E:incompatible types
+```
+
+## Long : 8 Bytes
+
+<mark>Why log required if have int data type?</mark>
+
+    Whenever int is not enough to hold big values then we should go for long data type.
+    Example:
+
+```java
+int smallNumber = 1000;// Suitable for small to medium-sized values
+long bigNumber = 100000000000L; // Used for larger values
+```
+
+## Floating Point Data types:
+
+<mark>Types of Floating-Point Data:</mark>
+
+### Float :
+
+    Uses Size: 4 bytes to store a floating-point number.
+
+<mark>Suitable If we want to 5 to 6 decimal places of accuracy then we should go for float.</mark>
+
+    Example:
+
+```java
+float pi = 3.14159f;
+```
+
+### Double :
+
+    Uses Size: 8 bytes to store a floating-point number.
+
+<mark>Suitable If we want to 14 to 15 decimal places of accuracy then we should go for double.</mark>
+
+    Generally preferred for most applications unless memory efficiency is crucial.
+
+    Example:
+
+```java
+    double distance = 299792458.0;
+    //Integer er Default value 0
+        int i1 = 1/3;
+        System.out.println(i1);
+    //Floating point er Default value 0.0----> sese f na dile integer vabe tai default ase..ar f na dite chaile .0 add kore dibo...
+        float f = 1/3;
+        System.out.println(f);
+
+        float f1 = 1/3f;
+        System.out.println(f1);
+
+    //Double er Default value
+        double d = 1/3;
+        System.out.println(d);
+
+        double d1 = 1/3f;
+        System.out.println(d1);
+```
+## what is precision?
+    Precision refers to the level of detail or accuracy in representing numbers, especially decimal numbers. In the context of floating-point numbers, precision determines how many significant digits can be reliably stored and manipulated.
+
+<mark>For example, let's consider the decimal number 1/3, which is a repeating fraction in
+decimal form: 0.333333...</mark>
+
+### Single-Precision (float):
+    If we store 1/3 as a float, the limited precision of 32 bits means that only a certain number of decimal places can be accurately represented. The result might be something like.
+
+```java
+float oneThird = 0.33333334f;
+```
+
+    Here, the precision is limited due to the available bits, and the value is rounded after a certain number of decimal places.
+
+### Double-Precision (double):
+    Using a double, with its 64-bit precision, allows for more accurate representation:
+
+```java
+double oneThird = 0.3333333333333333;
+```
+<mark>In this case, the greater precision of the double allows more decimal places to be
+stored accurately.</mark>
+
+## Boolean dat type : 
+
+<mark>Size: Not applicable...
+Range: Not applicable but allowed values are true or false.</mark>
+
+    Example :
+```java
+    boolean b=true;
+    boolean b1= false;
+//Invalid : 
+    //boolean b=True;
+    //boolean b="True";
+    //boolean b=0;
+```
+
+## Char : 
+<mark>Size: 2 bytes
+Range: 0 to 65535</mark>
+
+```java
+char ch = 'a';
+System.out.println(ch);//a
+
+char ch1 = 97;
+System.out.println(ch1);//a
+```
+
+    Note:
+    In old languages like C & C++ are ASCII code based the no.Of ASCII code characters are < 256 to represent these 256 characters 8 - bits enough hence char size in old languages 1 byte. In java we are allowed to use any worldwide alphabets character and java is Unicode based and no.Of unicode characters are > 256 and <= 65536 to represent all these characters one byte is not enough compulsory we should go for 2 bytes.
+
+
+
+
+
+
+
+
+
+
+
 
 > ## OOP:
 
