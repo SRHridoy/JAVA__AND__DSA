@@ -836,13 +836,16 @@ float pi = 3.14159f;
         double d1 = 1/3f;
         System.out.println(d1);
 ```
+
 ## what is precision?
+
     Precision refers to the level of detail or accuracy in representing numbers, especially decimal numbers. In the context of floating-point numbers, precision determines how many significant digits can be reliably stored and manipulated.
 
 <mark>For example, let's consider the decimal number 1/3, which is a repeating fraction in
 decimal form: 0.333333...</mark>
 
 ### Single-Precision (float):
+
     If we store 1/3 as a float, the limited precision of 32 bits means that only a certain number of decimal places can be accurately represented. The result might be something like.
 
 ```java
@@ -852,30 +855,34 @@ float oneThird = 0.33333334f;
     Here, the precision is limited due to the available bits, and the value is rounded after a certain number of decimal places.
 
 ### Double-Precision (double):
+
     Using a double, with its 64-bit precision, allows for more accurate representation:
 
 ```java
 double oneThird = 0.3333333333333333;
 ```
+
 <mark>In this case, the greater precision of the double allows more decimal places to be
 stored accurately.</mark>
 
-## Boolean dat type : 
+## Boolean dat type :
 
 <mark>Size: Not applicable...
 Range: Not applicable but allowed values are true or false.</mark>
 
     Example :
+
 ```java
     boolean b=true;
     boolean b1= false;
-//Invalid : 
+//Invalid :
     //boolean b=True;
     //boolean b="True";
     //boolean b=0;
 ```
 
-## Char : 
+## Char :
+
 <mark>Size: 2 bytes
 Range: 0 to 65535</mark>
 
@@ -890,16 +897,212 @@ System.out.println(ch1);//a
     Note:
     In old languages like C & C++ are ASCII code based the no.Of ASCII code characters are < 256 to represent these 256 characters 8 - bits enough hence char size in old languages 1 byte. In java we are allowed to use any worldwide alphabets character and java is Unicode based and no.Of unicode characters are > 256 and <= 65536 to represent all these characters one byte is not enough compulsory we should go for 2 bytes.
 
+## <mark> Control Flow : </mark>
 
+    Decision/choice making.
 
+```java
+/*
+                             Control Statements
+------------------------------------------------------------------------
+    (i)Selection Statements ||(ii)Iterative Statements ||(iii)Jump Statements
+    ---------------------------------------------------------------------
+        (1)Simple if       |        (1)While            |      (1)break
+        (2)if-else         |        (2)do-while         |      (2)continue
+        (3)nested-if       |        (3)for              |      (3)return
+        (4)if-else-if      |        (4)for-each
+    _________________________________________________________________________
+*/
+```
 
+### if-else Statements: Making Choices
 
+    Syntax:
 
+```java
+    if (condition)
+    {
+        // Code to execute if condition is true
+    }
+    else
+    {
+        // Code to execute if condition is false
+    }
+```
 
+> ### Note1: The argument to the if statement should be Boolean by mistake if we are providing any other type we will get "compile time error".
 
+```java
+    int a = 10;
+        //Condition inside if should be boolean
+        //We can use if with-out else
+        //If we are having multiple statements then we have to use {} otherwise no need;
+        if(a<=10)
+            System.out.println("Hello");
+        System.out.println("Hridoy");
+```
 
+## Even Odd Program :
 
+```java
+        int x=30;
 
+        if(x%2==0)
+        {
+            System.out.println("even");
+        }
+        else
+        {
+            System.out.println("odd");
+        }
+
+        int a = 10;
+        if(a == 10)
+        System.out.println("Yes");
+        if(a%2 == 0)
+        System.out.println("even");
+        if(a>100)
+        System.out.println("Yes less than 100");
+        else
+        System.out.println("No");
+```
+
+### ELSE - IF :
+```java
+int a = 90;
+        if (a>=100)
+        {
+            System.out.println("Excellent");
+        }
+        else if (a>=70)
+        {
+            System.out.println("Good Job");
+        }
+        else if (a>=50)
+        {
+            System.out.println("Keep Learning...");
+        }
+        else
+        {
+            System.out.println("Need Improvement");
+        }
+```
+
+### NESTED IF-ELSE:
+
+```java
+int a = 10;
+        //NESTED IF ELSE :
+        if (a==10)
+        {
+            System.out.println("a==10");
+            if(a<100)
+            {
+                System.out.println("Yes less than 100");
+                if (a%2==0)
+                {
+                    System.out.println("even");
+                    if(a>10)
+                    {
+                        System.out.println("No");
+                    }
+                    else
+                    {
+                        System.out.println("Yes");
+                        if(a>2)
+                        {
+                            System.out.println("Yes a is greater than 2");
+                            if(a%2!=0)
+                            {
+                                System.out.println("Odd");
+                            }
+                            else
+                            {
+                                System.out.println("Yes");
+                                if (a==10)
+                                {
+                                    System.out.println("THE END");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                System.out.println("a is greater than 100");
+            }
+        }
+```
+
+```java
+int a = 90;
+        if (a>=100)
+        {
+            System.out.println("Excellent");
+        }
+        else if (a>=70)
+        {
+            System.out.println("Good Job");
+            if(a==90)
+            {
+                System.out.println("Yes 90");
+                if(a>100)
+                {
+                    System.out.println("Greater than 100");
+                }
+                else if (a>120)
+                {
+                    System.out.println("Greater than 120");
+                }
+                else if (a<10)
+                {
+                    System.out.println("Less than 10");
+                }
+                else if(a==90)
+                {
+                    System.out.println("Yes a == 90");
+                }
+                else
+                {
+                    System.out.println("Not found");
+                }
+            }
+        }
+        else if (a>=50)
+        {
+            System.out.println("Keep Learning...");
+        }
+        else
+        {
+            System.out.println("Need Improvement");
+        }
+```
+
+### Switch : 
+```java
+//Switch e case must dia lagbe...
+        //Case Cant't be duplicate..
+        //Case value must be constant...
+        //Break dia must...
+
+        int x = 10;
+        switch(x)
+        {
+            case 10:
+                System.out.println("Yes x = 10");
+                break;
+            // case 10:
+            //     System.out.println("Dulicate");
+
+            case 9:
+                System.out.println("Yes x = 90");
+                break;
+
+            default:
+                System.out.println("This is default");
+        }
+```
 
 > ## OOP:
 
