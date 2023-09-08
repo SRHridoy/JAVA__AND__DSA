@@ -1,3 +1,5 @@
+package ControlFLowSwitch;
+
 import java.util.Scanner;
 
 class quesSwitch {
@@ -7,9 +9,9 @@ class quesSwitch {
         //int x = 5;
 
         //Taking user input :
-        Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        String result=null;
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        String result=null;//Local variable k initialize kora lage tai null use korsi....
 
         if(x>10)
             System.out.println("Invalid Input!");

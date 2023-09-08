@@ -968,6 +968,7 @@ System.out.println(ch1);//a
 ```
 
 ### ELSE - IF :
+
 ```java
 int a = 90;
         if (a>=100)
@@ -1079,9 +1080,10 @@ int a = 90;
         }
 ```
 
-### Switch : 
+### ControlFLowSwitch.Switch :
+
 ```java
-//Switch e case must dia lagbe...
+//ControlFLowSwitch.Switch e case must dia lagbe...
         //Case Cant't be duplicate..
         //Case value must be constant...
         //Break dia must...
@@ -1104,6 +1106,67 @@ int a = 90;
         }
 ```
 
+> ## <mark>Taking Input From User : </mark>
+
+```java
+//Taking user input :
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+```
+
+### Write a program to convert integer number to roman number from 1 to 10 using switch case.
+
+```java
+//Taking user input :
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        String result=null;//Local variable k initialize kora lage tai null use korsi....
+
+        if(x>10)
+            System.out.println("Invalid Input!");
+
+        else
+        {
+            switch (x)
+            {
+                case 1:
+                    result = "|";
+                    break;
+                case 2:
+                    result = "||";
+                    break;
+                case 3:
+                    result = "|||";
+                    break;
+                case 4:
+                    result = "|V";
+                    break;
+                case 5:
+                    result = "V";
+                    break;
+                case 6:
+                    result = "V|";
+                    break;
+                case 7:
+                    result = "V||";
+                    break;
+                case 8:
+                    result = "V|||";
+                    break;
+                case 9:
+                    result = "|X";
+                    break;
+                case 10:
+                    result = "X";
+                    break;
+
+                default:
+                    result = "Invalid Input";
+            }
+        System.out.println("Your Result for input = "+x +" is = "+ result);
+    }
+```
+
 > ## OOP:
 
 ```
@@ -1112,6 +1175,142 @@ Piller of OOP:
     2.Inheritance : Reusability.
     3.Polymorphism : Flexibility
 ```
+
+```java
+public class Person{
+
+    public static void main(String[] args) {
+        //Property/Variable
+        int x = 10;
+        //Action class er
+        read();
+    }
+
+    public static void read() {
+        System.out.println("This is another method!");
+    }
+}
+```
+
+## What is a class?
+
+    A class is a collection of objects.
+
+<mark>Classes don’t consume any space in the memory.</mark>
+
+    It is a user defined data type that act as a template for creating objects of the identical type.
+
+    A large number of objects can be created using the same class. Therefore, Class is considered as the blueprint for the object.
+
+## What is an object?
+
+    An object is a real-world entity which have properties and functionalities.
+
+<mark>Object is also called an instance of class. Objects take some space in memory.</mark>
+
+    For eg:
+    • Fruit is class and its object s are mango, apple, banana
+    • Furniture is class and its objects are table, chair, desk
+
+### What is the difference between a class and an object?
+#### <mark> Class:</mark>
+
+    1. It is a collection of objects.
+    2. It doesn't take up space in memory.
+    3. Classes are declared just once.
+
+#### <mark> Object:</mark>
+
+    1. It is an instance of a class.
+    2. It takes space in memory.
+    3. Objects can be declared as and when required.
+
+>### What is the difference between a class and a structure?
+    1.Class is a collection of objects.
+    Structure is a collection of variables of different data types under a single unit
+
+    2.Class is used to combine data and methods together.
+    Structure is used to grouping data.
+
+    3.Class's objects are created on the heap memory.
+    Structure's objects are created on the stack memory.
+
+    4.A class can inherit another class.
+    A structure can't inherit another structure.
+
+    5.A class has all members private by default
+    A structure has all members public by default
+
+    6.Classes are ideal for larger or complex objects
+    Structures are ideal for small and isolated model objects
+
+```java
+//Creating New Objects :
+Balance b = new Balance();
+```
+### Simple Code for Data Hiding : 
+
+```java
+public class DataHiding {
+    public static void main(String[] args) {
+
+        Balance b = new Balance();
+        int balance = b.getX();
+        System.out.println(balance);
+    }
+}
+
+class Balance
+{
+    private int x = 10000;
+
+    public int getX() {
+        //Validation
+        //Authorization
+        return x;
+    }
+
+}
+```
+
+```java
+public class Account {
+
+    public static void main(String[] args) {
+        BalanceN b = new BalanceN();
+        int bal = b.getX();
+        System.out.println(bal);
+
+        b.setX(2525);
+        int bel1 = b.getX();
+        System.out.println(bel1);
+    }
+}
+
+class BalanceN
+{
+    private int x = 10000;
+
+    public int getX() {
+        //Validation
+        return x;
+    }
+
+    public void setX(int x) {
+        //Validation
+        this.x = x;
+    }
+    
+}
+```
+
+### Tightly Encapsulated Class :
+    All data members must be private.
+
+
+> ### NOte : if the parent class in not TEC then no child class is TEC...
+
+
 
 > # Session 15 : Array
 
@@ -1155,4 +1354,4 @@ int arr[];
 arr = new int[size];
 ```
 
-> > ### Note:
+
