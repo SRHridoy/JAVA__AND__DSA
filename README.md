@@ -1411,7 +1411,9 @@ public class AddNum {
 >## Functions with Modifiers in Java:
     Access Modifiers:
 
-    Access modifiers determine the visibility of methods in different parts of your program. 
+    Access modifiers determine the visibility of methods in different parts of your program.
+
+>## <mark>Important: </mark>
 
 ```java
 public: 
@@ -1426,7 +1428,7 @@ Methods are accessible within the same package and subclasses, even if they are 
 default (no modifier): 
 Methods are accessible within the same package.
 ```
-
+># <mark> Public : </mark>
 
 ```java
 //PUBLIC: 
@@ -1448,6 +1450,7 @@ public class AddNum {
     }
 }
 ```
+># <mark> Private : </mark>
 ```java
 // PRIVATE : Same class sara same package ba onno kono jaigai accessible nah..
 
@@ -1475,6 +1478,8 @@ public class AddNum {
 }
 
 ```
+
+
 ```java
 //In same package : 
 public class ModifiersTest {
@@ -1496,7 +1501,7 @@ class TestModi{
     }
 }
 ```
-
+># <mark> Protected : </mark>
 ```java
 package methods;
 
@@ -1546,13 +1551,107 @@ public class DemoPro extends TestPro {
 
 ```
 
+># <mark> Default : </mark>
+```java
+package methods;
+
+public class DefaultMethod {
+
+    public static void main(String[] args) {
+        DefaultMethodTest defaultMethodTest = new DefaultMethodTest();
+        defaultMethodTest.defaultTest();
+    }
+}
+
+```
+
+```java
+package methods;
+
+public class DefaultMethodTest {
+    void defaultTest()
+    {
+        System.out.println("Iman is the 1st pillar of Islam...");
+    }
+}
+```
+
+### Examples : 
+```java
+public class ExampleModifiers1 {
+
+    public void printDog()
+    {
+        //This method accessible from anywhere.
+    }
+
+    private void printCat()
+    {
+        //This method accessible from within class.
+    }
+
+    protected void printCar()
+    {
+        //This method accessible from package + subclass.
+    }
+
+    void printHuman()
+    {
+        //This method accessible from same package.
+    }
+}
+```
+
+># <mark> Loops in Java : </mark>
+
+    Loops are control structures that allow you to execute a block of code repeatedly based on a condition. 
+
+    Types of loops:
+    • for
+    • while
+    • do while
+    • foreach
+
+## for loop syntax:
+
+<mark>The for loop is used when you know how many times you want to execute a
+code block.</mark>
+
+```java
+for (initialization; condition; update) {
+ // Code to be executed repeatedly
+}
+```
+
+```java
+for (int i = 1; i <= 10; i++)
+{
+    System.out.println(i);
+}
+```
+
+## Important: 
+    
+    Jekono program e 1st e thake Package then import then other code...
 
 
+```java
+//Write a program to find the sum of natural numbers from 1 to 1000.
+public class Sum {
 
+    public static void main(String[] args) {
+        int sum = 0;
+        int number = 1000;
+        for (int i = 1; i <= number; i++) {
+            //sum = sum + i;
+            sum+=i;
+        }
+        System.out.println("The sum is  : " +sum);
+    }
+}
+```
 
-
-
-
+> # For, while ,do while same as c and c++...
 
 
 > # Session 15 : Array
