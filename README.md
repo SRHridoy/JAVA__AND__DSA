@@ -1311,6 +1311,249 @@ class BalanceN
 > ### NOte : if the parent class in not TEC then no child class is TEC...
 
 
+## What are Methods in Java?
+
+    • Methods are blocks of code that perform specific tasks.
+    • A method can take input (parameters), process it, and optionally return a result
+
+### Method Structure:
+
+```java
+returnType methodName(parameters) 
+{
+ // Method body
+ return returnValue; // (if applicable)
+}
+```
+
+>### NOTE :Return Type: The data type of the value the method returns. Use void if the method doesn'treturn anything.
+
+```java
+public class TestMethod {
+    public static void main(String[] args) {
+        dua();//Direct Calling
+    }
+
+//Example print ALLAH HU AKBER
+//Non static method k static method call korte pare nah
+
+    public static void dua() {
+        System.out.println("ALLAH HU AKBER");
+    }
+}
+```
+
+
+```java
+public class TestMethod {
+    public static void main(String[] args) {
+        dua();//Direct calling
+
+        //Create object :
+        iman i1 = new iman();
+        i1.printIman();
+    }
+
+    //Example print ALLAH HU AKBER
+//Non static method k static method call korte pare nah
+    public static void dua() {
+        System.out.println("ALLAH HU AKBER");
+    }
+}
+
+//When we have methods in different class or package thenw we call the method
+// using objects..
+class iman{
+
+    public void printIman()
+    {
+        System.out.println("Iman is the 1st piller");
+    }
+}
+```
+
+```java
+public class TestMethod01 {
+
+    public static void main(String[] args) {
+        TestMethod01 t = new TestMethod01();
+        t.iman();
+        //if we don't iman() as static then this work otherwise doesn't work.
+        // ..then we have to use onlu iman() without creating object of the 
+        // class.
+    }
+
+    public void iman()
+    {
+        System.out.println("Iman is the 1st pillar of Islam");
+    }
+}
+
+```
+
+### Adding Two Numbers : 
+```java
+public class AddNum {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 10;
+        int result = addNumbers(x,y);
+        System.out.println(result);
+    }
+
+    public static int addNumbers(int a, int b)
+    {
+        return  a+b;
+    }
+}
+```
+
+>## Functions with Modifiers in Java:
+    Access Modifiers:
+
+    Access modifiers determine the visibility of methods in different parts of your program. 
+
+```java
+public: 
+Methods with this modifier are accessible from anywhere.
+
+private:
+Methods are accessible only within the same class.
+
+protected: 
+Methods are accessible within the same package and subclasses, even if they are in different packages.
+
+default (no modifier): 
+Methods are accessible within the same package.
+```
+
+
+```java
+//PUBLIC: 
+
+public class AddNum {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 10;
+        int result = addNumbers(x,y);
+        System.out.println(result);
+//Using publicly decleared method from different place : 
+        iman i = new iman();
+        i.printIman();
+    }
+
+    public static int addNumbers(int a, int b)
+    {
+        return  a+b;
+    }
+}
+```
+```java
+// PRIVATE : Same class sara same package ba onno kono jaigai accessible nah..
+
+//In Different package :
+public class AddNum {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 10;
+        int result = addNumbers(x,y);
+        System.out.println(result);
+//Using publicly decleared method from different place :
+        //Public method call:
+        iman i = new iman();
+        i.printIman();
+
+        //Private method call:
+        ModifiersTest m = new ModifiersTest();
+        //m.printHello(); kaj korbe nah...
+    }
+
+    public static int addNumbers(int a, int b)
+    {
+        return  a+b;
+    }
+}
+
+```
+```java
+//In same package : 
+public class ModifiersTest {
+    public static void main(String[] args) {
+        printHello();
+    }
+    private static void printHello()
+    {
+        System.out.println("Hello from private");
+    }
+}
+
+class TestModi{
+
+    public void callHello()
+    {
+        ModifiersTest m = new ModifiersTest();
+        //m.printHello(); Not possible
+    }
+}
+```
+
+```java
+package methods;
+
+import testMethod.DemoPro;
+
+public class TestProtected {
+    public static void main(String[] args) {
+
+        TestPro t = new TestPro();//Parent class object
+        t.printPro();
+
+        TestProAgain t1 = new TestProAgain();//Child Class object
+        t1.printPro();
+
+        DemoPro dempPro = new DemoPro();//Different package class object
+        dempPro.printPro();
+    }
+}
+```
+
+```java
+package methods;
+
+public class TestPro {
+
+    protected void printPro()
+    {
+        System.out.println("Hello Pro vi...");
+    }
+}
+
+class TestProAgain extends TestPro
+{
+
+}
+```
+
+```java
+
+package testMethod;
+
+import methods.TestPro;
+
+public class DemoPro extends TestPro {
+
+}
+
+```
+
+
+
+
+
+
+
+
+
 
 > # Session 15 : Array
 
