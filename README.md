@@ -1653,6 +1653,134 @@ public class Sum {
 
 > # For, while ,do while same as c and c++...
 
+># Abstraction : 
+```java
+
+abstract class  AbstractionTest
+{
+    //Abstract method holo tara jader implementation child e thake...
+    //kono class k abstract korar mane holo at least 1ta method abstract hobe...
+    //concreate method o thakte pare...
+    abstract int sum();
+}
+
+class Test extends AbstractionTest
+{
+    @Override
+    int sum() {
+        System.out.println("Hello Sum");
+        return 10;
+    }
+    //eta create korar stahe stahei bolbe method implement korte but na korle
+    // etakeo abstract class banate hobe...
+}
+
+public class AbstractionDemo {
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        int res = t.sum();
+        System.out.println(res);
+    }
+}
+```
+
+># Inheritance : 
+    (i)Parent child relationship e kaj kore
+    (ii) Is - A realtionship
+    (iii) Code reusability
+    (iv)Child parent er implemention dite pare...
+
+    Java doesn't support multiple inheritance...
+
+```java
+class Dhani//Parent
+{
+    //Final use korle change kora jai nah pore...orthat override hoi nah...
+   // final int a = 10;
+    int a = 10;
+    public void house()
+    {
+        System.out.println("Parents Normal House");
+    }
+}
+//Child
+class DhaniKaBeta extends Dhani
+{
+    public void house()
+    {
+        System.out.println("Modified Child House");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+
+        Dhani dhani = new Dhani();
+        dhani.house();
+
+        DhaniKaBeta dhaniKaBeta = new DhaniKaBeta();
+        dhaniKaBeta.house();
+        System.out.println(dhaniKaBeta.a);
+        dhaniKaBeta.a = 20;
+        System.out.println(dhaniKaBeta.a);
+
+    }
+}
+```
+
+> ### Method Signature : method name + parameter...
+
+    Function overloading compile time e hoi...
+
+># Polymorphism : 
+```java
+class OverRiding{
+
+    //Also possible overriding but if private doesn't work...
+    /*protected void printDone()
+    {
+        System.out.println("Done");
+    }*/
+    public void printDone()
+    {
+        System.out.println("Done");
+    }
+}
+
+class OverRidingTest extends OverRiding{
+    public void printDone()
+    {
+        System.out.println("This is done + done from child ");
+    }
+}
+
+public class OverRidingDemo {
+
+    public static void main(String[] args) {
+        //Complite Time Poly:
+        OverRiding overRiding = new OverRiding();
+        overRiding.printDone();
+
+        //Runtime Poly:
+        OverRidingTest overRidingTest = new OverRidingTest();
+        overRidingTest.printDone();
+
+        OverRiding p = new OverRidingTest();
+        p.printDone();
+
+    }
+}
+```
+
+
+
+
+
+
+
+
+
 
 > # Session 15 : Array
 
