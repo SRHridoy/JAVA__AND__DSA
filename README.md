@@ -1999,3 +1999,4 @@ public class ArrayProg2 {
 ```
 
 
+>## NOTE : for each loop only forward no backward and so it is bidirectional...So, Reverse of array using for each is impossible..
