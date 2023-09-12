@@ -96,10 +96,6 @@ String std_Addr="Hyd";======Valid
 >
 > ### Note 3: In java applications, we can use all predefined class names and interface names as identifiers.
 
-> ### 2. Literals:
-
-    Literal is a constant assigned to the variables
-
 Examples:
 
 1. String
@@ -109,6 +105,10 @@ Examples:
 5. Runnable
 6. Exception
 7. String
+> ### 2. Literals:
+
+    Literal is a constant assigned to the variables
+
 
 Example:
 
@@ -1326,7 +1326,7 @@ returnType methodName(parameters)
 }
 ```
 
->### NOTE :Return Type: The data type of the value the method returns. Use void if the method doesn'treturn anything.
+>### NOTE :Return Type: The data type of the value the method returns. Use void if the method doesn't return anything.
 
 ```java
 public class TestMethod {
@@ -1361,7 +1361,7 @@ public class TestMethod {
     }
 }
 
-//When we have methods in different class or package thenw we call the method
+//When we have methods in different class or package then we call the method
 // using objects..
 class iman{
 
@@ -1379,7 +1379,7 @@ public class TestMethod01 {
         TestMethod01 t = new TestMethod01();
         t.iman();
         //if we don't iman() as static then this work otherwise doesn't work.
-        // ..then we have to use onlu iman() without creating object of the 
+        // ..then we have to use onyu iman() without creating object of the 
         // class.
     }
 
@@ -1773,11 +1773,129 @@ public class OverRidingDemo {
 }
 ```
 
+>### Static function ke class name diyeo call kora jai..
+```java
+class Test
+{
+    public static void m1()
+    {
+    
+    }
+
+    public static void main(String[] args)
+    {
+        Test.m1();
+    }
+}
+```
+
+># Types of Variables : 
+    (i)Instance Variable : 
+<mark>Jara Class er moddhe but method er baire thake...Er seperate copy create hoi for each object...Created at time of object creation and distructed at time of object distruction....Heap memory te jaiga pai...Access kora hoi object reference diiye...Scope will be whole class....This is not able to use in static area...</mark>
+
+    (ii)Static Variable:
+<maark>jesob variable er samne static likha thake tara static... static variable er value class er vitore ebong method er  assign kora hoi...Single copy create hoi object to object vary kore nah...Jokhn class load hoi tokhn create hoi ar jokhn unload kora hoi tokhn distructed hoi...
+Static variable can be used in instance area</maark>
+
+    (iii)Local Variable : 
+<mark>Local Variable Stack memory te create hoi...Created in a block / method...Scope oi block / method er moddhei...</mark>
 
 
+>## Instance Variable : 
+```java
+package Variables;
+
+class  VariableTest
+{
+    int a = 10;//Instance variable
+    public void Iman()
+    {
+        System.out.println("Iman is the 1st piller");
+        System.out.println(a);
+    }
+
+//Instance variable are not able to use in static area...
+    // public static void print()
+    // {
+    //     //Not possible.....
+    //     System.out.println(a);
+    // }
+
+    //sout kokhono method er baire use kora jai nah...
+    //System.out.println(a);
+}
+
+public class VariableDemo {
+    public static void main(String[] args) {
+        VariableTest variableTest1 = new VariableTest();
+        variableTest1.Iman();
+        variableTest1.a = 2000;
+        variableTest1.Iman();
+
+        VariableTest variableTest2 = new VariableTest();
+        variableTest2.Iman();
+    }
+}
+
+```
+
+>## Static Variable : 
+```java
+package Variables;
+
+class StaticTest
+{
+    static int b = 2121;
+    public void Demo()
+    {
+        System.out.println(b);
+    }
+    public static void Print()
+    {
+        System.out.println(b);
+    }
+}
+
+public class StaticDemo {
+    public static void main(String[] args) {
+        StaticTest s1 = new StaticTest();
+        s1.Demo();
+        //Static variable k object diyeo access kora jai but eta best
+        // practice nah...
+        //s1.b = 20;
+        StaticTest.b = 2000;
+        StaticTest.Print();
+
+        StaticTest s2 = new StaticTest();
+        StaticTest.Print();
+        s2.Demo();
+    }
+}
+```
 
 
+>## Local Variable : 
 
+```java
+package Variables;
+
+class LocalTest
+{
+    public void printLocal()
+    {
+        String s = "DSA With Java";//Local variable ...
+        System.out.println(s);
+    }
+}
+
+public class LocalVariableDemo {
+
+    public static void main(String[] args) {
+        LocalTest l1 = new LocalTest();
+        l1.printLocal();
+    }
+}
+```
 
 
 
@@ -1822,6 +1940,62 @@ here we can apply L.H.S and R.H.S :
 ```java
 int arr[];
 arr = new int[size];
+```
+
+
+```java
+public class ArrayProg1 {
+
+    public static void main(String[] args) {
+        //int type array
+        //declare
+        //initialization
+
+        int arr[];
+        //int []arr; Same...
+
+        //int arr[] = {10, 11, 12, 13}//Not Recommended...
+        arr = new int [5];//Sobgula 0 dara initialize hobe...
+        //Fetch :
+        System.out.println(arr[3]);//O(1)
+        //Insert:
+        arr[3] = 99;//O(1)
+        System.out.println(arr[3]);
+
+        System.out.println(arr.length);
+
+        System.out.println(arr);
+    }
+}
+```
+
+```java
+//Array User Input And Print : 
+
+public class ArrayProg2 {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        int arr[] = new int[5];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Enter the number for the index = "+i);
+            int data = scan.nextInt();
+            arr[i] = data;
+        }
+
+        display(arr);
+    }
+
+    public static void display(int arr[])
+    {
+        //for each loop:
+        for (int a:arr)
+        {
+            System.out.println(a);
+        }
+    }
+}
 ```
 
 
